@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thatix | Food Discovery</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="site-logo">
+                        <i class="fas fa-utensils logo-icon-main"></i>
+                        <span class="logo-text-main">Thatix</span>
+                    </div>
+                    <p class="site-tagline">Discover Amazing Foods Worldwide</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search -->
+    <section class="search-container-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="search-wrapper-box">
+                        <h1 class="search-heading-title">Find Your Favorite Meals</h1>
+                        <p class="search-description-text">Search for delicious recipes from around the globe</p>
+                        
+                        <div class="search-input-wrapper">
+                            <div class="input-group">
+                                <input type="text" 
+                                       class="form-control search-input-field" 
+                                       id="searchInputField" 
+                                       placeholder="Type food name (chicken, pasta, cake)">
+                                <button class="btn search-submit-button" id="searchSubmitButton">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                            <div class="search-suggestion-wrapper">
+                                <span class="suggestion-label">Try:</span>
+                                <button class="suggestion-button-item" data-food-name="pizza">Pizza</button>
+                                <button class="suggestion-button-item" data-food-name="burger">Burger</button>
+                                <button class="suggestion-button-item" data-food-name="sushi">Sushi</button>
+                                <button class="suggestion-button-item" data-food-name="cake">Cake</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Grid -->
+    <section class="food-grid-main-section">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2 class="section-main-heading">Popular Food Items</h2>
+                <p class="section-sub-heading">Browse our collection of delicious meals</p>
+            </div>
+            
+            <!-- Food Grid -->
+            <div class="row g-4" id="foodGridMainContainer">
+                <!-- Food items will load here -->
+            </div>
+            
+            <!-- Loading -->
+            <div class="loading-wrapper" id="loadingWrapper">
+                <div class="spinner-border custom-spinner" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="loading-text-display">Loading food items...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="category-display-section">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2 class="section-main-heading">Food Categories</h2>
+                <p class="section-sub-heading">Explore different types of cuisines</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-item-card">
+                        <div class="category-image-holder">
+                            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Vegetarian Food" 
+                                 class="category-image-display">
+                        </div>
+                        <div class="category-content-holder">
+                            <h3 class="category-title-display">Vegetarian</h3>
+                            <p class="category-description-display">Fresh plant based healthy meals.</p>
+                            <button class="category-explore-button" data-category-name="vegetarian">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-item-card">
+                        <div class="category-image-holder">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Desserts" 
+                                 class="category-image-display">
+                        </div>
+                        <div class="category-content-holder">
+                            <h3 class="category-title-display">Desserts</h3>
+                            <p class="category-description-display">Sweet treats for everyone.</p>
+                            <button class="category-explore-button" data-category-name="dessert">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-item-card">
+                        <div class="category-image-holder">
+                            <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Seafood" 
+                                 class="category-image-display">
+                        </div>
+                        <div class="category-content-holder">
+                            <h3 class="category-title-display">Seafood</h3>
+                            <p class="category-description-display">Fresh ocean fish dishes.</p>
+                            <button class="category-explore-button" data-category-name="seafood">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-item-card">
+                        <div class="category-image-holder">
+                            <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Breakfast" 
+                                 class="category-image-display">
+                        </div>
+                        <div class="category-content-holder">
+                            <h3 class="category-title-display">Breakfast</h3>
+                            <p class="category-description-display">Morning meal options.</p>
+                            <button class="category-explore-button" data-category-name="breakfast">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="foodDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header modal-header-custom">
+                    <h2 class="modal-title-text">Food Details</h2>
+                    <button type="button" class="btn-close-modal-custom" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBodyContentDisplay">
+                    <!-- Details load here -->
+                </div>
+                <div class="modal-footer modal-footer-custom">
+                    <button type="button" class="btn modal-close-button" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 footer-column-item">
+                    <div class="footer-logo-wrapper">
+                        <i class="fas fa-utensils footer-logo-icon"></i>
+                        <span class="footer-logo-text-item">Thatix</span>
+                    </div>
+                    <p class="footer-description-text">
+                        Thatix helps you discover delicious meals from around the world. 
+                        Find recipes, cooking tips, and meal ideas.
+                    </p>
+                    <div class="social-icon-wrapper">
+                        <a href="#" class="social-icon-link-item"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-link-item"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon-link-item"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-link-item"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 footer-column-item">
+                    <h4 class="footer-heading-title">Quick Links</h4>
+                    <ul class="footer-link-list">
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Explore</a></li>
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Categories</a></li>
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 footer-column-item">
+                    <h4 class="footer-heading-title">Food Types</h4>
+                    <ul class="footer-link-list">
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Vegetarian</a></li>
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Seafood</a></li>
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Desserts</a></li>
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Breakfast</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 footer-column-item">
+                    <h4 class="footer-heading-title">Contact Us</h4>
+                    <ul class="footer-contact-list">
+                        <li><i class="fas fa-map-marker-alt contact-icon-item"></i> 123 Food Street, City</li>
+                        <li><i class="fas fa-phone contact-icon-item"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope contact-icon-item"></i> info@thatix.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom-wrapper">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright-text-item">&copy; 2023 Thatix. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-link-wrapper">
+                            <a href="#" class="footer-bottom-link-item">Privacy Policy</a>
+                            <a href="#" class="footer-bottom-link-item">Terms of Service</a>
+                            <a href="#" class="footer-bottom-link-item">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
